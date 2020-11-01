@@ -57,7 +57,7 @@ img{
 
 .test-content{
     height:75vh;
-    background-color: rgb(100,5,200);
+    background-color: rgb(255,255,255,0.05);
     margin: 0;
     margin: 0;
     border:0;
@@ -68,13 +68,90 @@ img{
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
+  cursor: grabbing;
 }
 
-.card {
+/* STYLE FOR PUBLICATIONS */
+.publi-item {
     display: inline-block;
-    width:50vw;
-    height: 75vh;
+    width:30vw;
+    height: 65vh;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    border: 1px solid rgb(255,255,255);
   }
+
+.publi-item1{
+    background-image: url('../paper_image/publi1.png');
+    background-size: cover;
+    background-position: center;
+}
+.publi-item2{
+    background-image: url('../paper_image/publi2.png');
+    background-size: cover;
+    background-position: center;
+}
+.publi-item3{
+    background-image: url('../paper_image/publi3.png');
+    background-size: cover;
+    background-position: center;
+}
+.publi-item4{
+    background-image: url('../paper_image/publi4.png');
+    background-size: cover;
+    background-position: center;
+}
+.publi-item5{
+    background-image: url('../paper_image/publi5.png');
+    background-size: cover;
+    background-position: center;
+}
+.publi-item6{
+    background-image: url('../paper_image/publi6.png');
+    background-size: cover;
+    background-position: center;
+}
+.publi-item7{
+    background-image: url('../paper_image/publi7.png');
+    background-size: cover;
+    background-position: center;
+}
+
+ .publi-item img{
+     height:60vh;
+     width: 30vh;
+     margin-left: auto;
+     margin-right: auto;
+     margin-top:2.5vh;
+     margin-top:2.5vh;
+     display: block;
+ }
+
+ .publi-item h2,h3{
+     text-align: center;
+     font-family:"Courier";
+     color: white;
+     text-decoration-line: none;
+     margin-top:5vh;
+ }
+ .publi-item h5{
+     text-align: center;
+     font-family:"Courier";
+     color: white;
+     text-decoration-line: none;
+  }
+
+  .card {
+      display: inline-block;
+      width:60vh;
+      height: 75vh;
+    }
+
+.card p{color:white;}
 
 /* SCROLL BAR TEST */
 

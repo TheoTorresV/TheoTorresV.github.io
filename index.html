@@ -11,7 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"></script>
 
     <!-- OTHER SCRIPTS-->
-    <script src="js/slide_publi.js"></script>
+
 </head>
 
 
@@ -24,21 +24,46 @@
 
     <!-- Publication Section -->
     <div id="publications">
+        <!-- Start with separator -->
         <div class='separator'>
         </div>
 
-        <div class='test-content'>
+        <div class='test-content' id="section1" >
+
+            <div id='publi-section' class="scrolling-wrapper">
+                <div class="publi-item publi-item7"></div>
+                <div class="publi-item publi-item6"></div>
+                <div class="publi-item publi-item5"></div>
+                <div class="publi-item publi-item4"></div>
+                <div class="publi-item publi-item3"></div>
+                <div class="publi-item publi-item2"></div>
+                <div class="publi-item publi-item1"></div>
+
+
+            </div>
         </div>
 
     <!-- Outreach Section -->
     <div id="outreach">
 
-<!-- Start with separator -->
+        <!-- Start with separator -->
         <div class='separator'>
         </div>
-            <div class='test-content'>
+
+        <div class='test-content' id="section1" >
+
+            <div class="scrolling-wrapper">
+                <div class="publi-item publi-item7"></div>
+                <div class="publi-item publi-item6"></div>
+                <div class="publi-item publi-item5"></div>
+                <div class="publi-item publi-item4"></div>
+                <div class="publi-item publi-item3"></div>
+                <div class="publi-item publi-item2"></div>
+                <div class="publi-item publi-item1"></div>
+
+
             </div>
-    </div>
+        </div>
 
     <!-- Resume Section -->
     <div id="resume">
@@ -60,17 +85,6 @@
 
         <div class='test-content' id='section1'>
 
-            <div class="scrolling-wrapper">
-              <div class="card"><h2>Card</h2></div>
-              <div class="card"><h2>Card</h2></div>
-              <div class="card"><h2>Card</h2></div>
-              <div class="card"><h2>Card</h2></div>
-              <div class="card"><h2>Card</h2></div>
-              <div class="card"><h2>Card</h2></div>
-              <div class="card"><h2>Card</h2></div>
-              <div class="card"><h2>Card</h2></div>
-            </div>
-
         </div>
 
         <div class='separator'>
@@ -78,5 +92,52 @@
 
     </div>
 
+
+<!-- SCRIPTS -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const ele = document.getElementById('publi-section');
+    ele.style.cursor = 'grab';
+
+    let pos = { top: 0, left: 0, x: 0, y: 0 };
+
+    const mouseDownHandler = function(e) {
+        ele.style.cursor = 'grabbing';
+        ele.style.userSelect = 'none';
+
+        pos = {
+            left: ele.scrollLeft,
+            top: ele.scrollTop,
+            // Get the current mouse position
+            x: e.clientX,
+            y: e.clientY,
+        };
+
+        document.addEventListener('mousemove', mouseMoveHandler);
+        document.addEventListener('mouseup', mouseUpHandler);
+    };
+
+    const mouseMoveHandler = function(e) {
+        // How far the mouse has been moved
+        const dx = e.clientX - pos.x;
+        const dy = e.clientY - pos.y;
+
+        // Scroll the element
+        ele.scrollTop = pos.top - dy;
+        ele.scrollLeft = pos.left - dx;
+    };
+
+    const mouseUpHandler = function() {
+        ele.style.cursor = 'grab';
+        ele.style.removeProperty('user-select');
+
+        document.removeEventListener('mousemove', mouseMoveHandler);
+        document.removeEventListener('mouseup', mouseUpHandler);
+    };
+
+    // Attach the handler
+    ele.addEventListener('mousedown', mouseDownHandler);
+});
+</script>
 </body>
 </html>
